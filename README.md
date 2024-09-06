@@ -1,12 +1,14 @@
 ```markdown
-# OpenAI API
+
+# OBS: É preciso criar uma CONTA na OPENAI e colocar na variável de ambiente OPENAI_KEY a chave da conta.
+
 ```
 ## Executar Projeto
 
 Para iniciar o projeto, utilize o Docker Compose. Siga os passos abaixo:
 
 ```bash
-cd parallax-api/docker
+cd openai-api/docker
 docker-compose up
 ```
 
@@ -77,6 +79,18 @@ PUT http://localhost:8080/admin/{userId}/active
 DELETE http://localhost:8080/admin/{userId}/active
 ```
 
+### Chat 
 
+Após a autenticação do usuário, é suficiente invocar o seguinte endpoint de forma repetida para estabelecer uma conexão com o histórico de memória da Open AI.
+```
+POST http://localhost:8080/sophia/chat
+```
 
+Body:
+
+```json
+{
+  "message": "qual é o nome do meu irmão?"
+}
+```
 
